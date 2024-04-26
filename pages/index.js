@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const index = () => {
-  return (
-    <div>
-      CRM
-    </div>
-  );
+  return <></>;
 };
 
 export default index;

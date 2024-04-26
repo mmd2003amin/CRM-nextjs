@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: black;
+    src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Black.ttf");
+  }
+  @font-face {
+    font-family: bold;
+    src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Bold.ttf");
+  }
+  @font-face {
+    font-family: extraBold;
+    src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-ExtraBold.ttf");
+  }
+  @font-face {
+    font-family: extraLight;
+    src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-ExtraLight.ttf");
+  }
+  @font-face {
+    font-family: light;
+    src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Light.ttf");
+  }
+  @font-face {
+    font-family: medium;
+    src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Medium.ttf");
+  }
+  @font-face {
+    font-family: regular;
+    src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Regular.ttf");
+  }
+}
+
+@layer components {
+  .centering {
+    @apply flex justify-center items-center;
+  }
+
+  .icons-navbar svg {
+    @apply ml-2 xs:ml-5 text-lg cursor-pointer;
+  }
+}
