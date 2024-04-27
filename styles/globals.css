@@ -39,6 +39,15 @@
   }
 
   .icons-navbar svg {
-    @apply ml-2 xs:ml-5 text-lg cursor-pointer;
+    @apply ml-3 xs:ml-5 text-lg cursor-pointer;
+  }
+
+  .scrollSidebar::-webkit-scrollbar {
+    width: 5px;
+    @apply bg-white rounded-[20px];
+  }
+
+  .scrollSidebar::-webkit-scrollbar-thumb {
+    @apply rounded-[20px] bg-slate-600 opacity-80;
   }
 }
