@@ -4,27 +4,27 @@
 
 @layer base {
   @font-face {
-    font-family: black;
+    font-family: face-black;
     src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Black.ttf");
   }
   @font-face {
-    font-family: bold;
+    font-family: face-bold;
     src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Bold.ttf");
   }
   @font-face {
-    font-family: extraBold;
+    font-family: face-extraBold;
     src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-ExtraBold.ttf");
   }
   @font-face {
-    font-family: extraLight;
+    font-family: face-extraLight;
     src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-ExtraLight.ttf");
   }
   @font-face {
-    font-family: light;
+    font-family: face-light;
     src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Light.ttf");
   }
   @font-face {
-    font-family: medium;
+    font-family: face-medium;
     src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Medium.ttf");
   }
   @font-face {
@@ -49,5 +49,9 @@
 
   .scrollSidebar::-webkit-scrollbar-thumb {
     @apply rounded-[20px] bg-slate-600 opacity-80;
+  }
+
+  .list-transactions tr td {
+    @apply py-2.5;
   }
 }

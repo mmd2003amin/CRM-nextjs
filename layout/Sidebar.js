@@ -1,8 +1,21 @@
 import pages from "@/constant/pages";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
 const Sidebar = ({ openSidebar, setOpenSidebar }) => {
+  const [namePage, setNamePage] = useState("Dashboard");
+  const routes = useRouter();
+
+  const pageHandler = (page) => {
+    setNamePage(page);
+    if (page === "Dashboard") {
+      routes.push(`/dashboard`);
+    } else {
+      routes.push(`/dashboard/${page.toLowerCase()}`);
+    }
+  };
+
   return (
     <div
       dir="ltr"
@@ -36,8 +49,11 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
             <div className="text-sm ml-2">
               {page.items.map((item) => (
                 <div
+                  onClick={() => pageHandler(item.name)}
                   key={item.id}
-                  className="centering justify-start hover: hover:bg-slate-600 hover:opacity-80 duration-200 cursor-pointer rounded-lg p-4 mb-1"
+                  className={`centering justify-start duration-200 cursor-pointer rounded-lg p-4 mb-1 hover:hover:bg-slate-600 hover:opacity-80 ${
+                    namePage === item.name && "bg-slate-600 opacity-80"
+                  }`}
                 >
                   <i>{item.icon}</i>
                   <p className="ml-3 text-[16px] mt-1">{item.name}</p>

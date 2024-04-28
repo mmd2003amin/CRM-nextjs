@@ -8,12 +8,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      black: "black",
-      extraBold: "extraBold",
-      bold: "bold",
-      extraLight: "extraLight",
-      light: "light",
-      medium: "medium",
+      faceBlack: "face-black",
+      faceExtraBold: "face-extraBold",
+      faceBold: "face-bold",
+      faceExtraLight: "face-extraLight",
+      faceLight: "face-light",
+      faceMedium: "face-medium",
       regular: "regular",
     },
 
@@ -36,6 +36,7 @@ module.exports = {
 
       screens: {
         xs: "450px",
+        510: "510px",
       },
     },
   },
