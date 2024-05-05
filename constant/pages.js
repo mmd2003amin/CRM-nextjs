@@ -6,35 +6,35 @@ import { PiBagSimpleFill } from "react-icons/pi";
 import { MdReport } from "react-icons/md";
 import { RiTeamFill } from "react-icons/ri";
 import { IoSettingsSharp } from "react-icons/io5";
-import { TbHelp, TbHelpSquareFilled } from "react-icons/tb";
+import { TbHelp } from "react-icons/tb";
 import { FiLogOut } from "react-icons/fi";
 
 const pages = [
   {
-    category: "Pages",
+    category: "pages",
     items: [
-      { id: 1, name: "Dashboard", icon: <LuLayoutDashboard /> },
-      { id: 2, name: "Users", icon: <LuUsers /> },
-      { id: 3, name: "Products", icon: <RiProductHuntLine /> },
-      { id: 4, name: "Transactions", icon: <FaDollarSign /> },
+      { id: 1, name: "dashboard", icon: <LuLayoutDashboard /> },
+      { id: 2, name: "users", icon: <LuUsers /> },
+      { id: 3, name: "products", icon: <RiProductHuntLine /> },
+      { id: 4, name: "transactions", icon: <FaDollarSign /> },
     ],
   },
 
   {
-    category: "Analytics",
+    category: "analytics",
     items: [
-      { id: 5, name: "Revenue", icon: <PiBagSimpleFill /> },
-      { id: 6, name: "Reports", icon: <MdReport /> },
-      { id: 7, name: "Teams", icon: <RiTeamFill /> },
+      { id: 5, name: "revenue", icon: <PiBagSimpleFill /> },
+      { id: 6, name: "reports", icon: <MdReport /> },
+      { id: 7, name: "teams", icon: <RiTeamFill /> },
     ],
   },
 
   {
-    category: "User",
+    category: "user",
     items: [
-      { id: 8, name: "Settings", icon: <IoSettingsSharp /> },
-      { id: 9, name: "Help", icon: <TbHelp /> },
-      { id: 10, name: "Logout", icon: <FiLogOut /> },
+      { id: 8, name: "settings", icon: <IoSettingsSharp /> },
+      { id: 9, name: "help", icon: <TbHelp /> },
+      { id: 10, name: "logout", icon: <FiLogOut /> },
     ],
   },
 ];

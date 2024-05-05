@@ -8,6 +8,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
+      kalameh: "kalameh",
       faceBlack: "face-black",
       faceExtraBold: "face-extraBold",
       faceBold: "face-bold",

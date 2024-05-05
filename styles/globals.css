@@ -4,6 +4,10 @@
 
 @layer base {
   @font-face {
+    font-family: kalameh;
+    src: url("../font/LeagueSpartan-2.220/Kalameh-Regular.ttf");
+  }
+  @font-face {
     font-family: face-black;
     src: url("../font/LeagueSpartan-2.220/static/TTF/LeagueSpartan-Black.ttf");
   }
@@ -39,7 +43,7 @@
   }
 
   .icons-navbar svg {
-    @apply ml-3 xs:ml-5 text-lg cursor-pointer;
+    @apply mx-1.5 xs:mx-2 text-lg cursor-pointer;
   }
 
   .scrollSidebar::-webkit-scrollbar {
@@ -53,5 +57,9 @@
 
   .list-transactions tr td {
     @apply py-2.5;
+  }
+
+  .languages a {
+    @apply w-full py-1 px-2 text-center hover:bg-slate-700 cursor-pointer duration-200;
   }
 }

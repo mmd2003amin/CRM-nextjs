@@ -1,10 +1,13 @@
 import pages from "@/constant/pages";
+import changeStyle from "@/helper/changeStyle";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
 const Sidebar = ({ openSidebar, setOpenSidebar }) => {
   const [namePage, setNamePage] = useState("Dashboard");
+  const { t } = useTranslation();
   const routes = useRouter();
 
   const pageHandler = (page) => {
@@ -18,26 +21,37 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
 
   return (
     <div
-      dir="ltr"
-      className={`font-regular scrollSidebar overflow-auto duration-500 h-full w-3/4 xs:w-72 bg-template text-white fixed top-0 lg:left-0 ${
-        openSidebar ? "left-0" : "-left-72"
+      dir={`${changeStyle("rtl", "ltr")}`}
+      className={`scrollSidebar fixed top-0 overflow-auto duration-500 bg-template text-white w-3/4 xs:w-72 ${
+        routes.locale === "fa" &&
+        (openSidebar ? "right-0" : "-right-72 lg:right-0")
+      } ${
+        routes.locale !== "fa" &&
+        (openSidebar ? "left-0" : "-left-72 lg:left-0")
       }`}
     >
       <IoMdClose
-        className={`text-xl absolute top-2 right-2 cursor-pointer ${
+        className={`text-xl absolute top-2 cursor-pointer ${
           !openSidebar && "hidden"
-        }`}
+        } ${changeStyle("left-2", "right-2")}`}
         onClick={() => setOpenSidebar(false)}
       />
 
-      <div className="centering justify-start mt-8 ml-5">
+      <div className={`centering justify-start pt-8 ml-5`}>
         <img
           className="size-14 rounded-full mr-4"
           src="/admin.jpg"
           alt="admin"
         />
-        <div>
-          <h3 className="text-[17px] font-medium">admin</h3>
+        <div className={`${changeStyle("mr-5")}`}>
+          <h3
+            className={`text-[17px] ${changeStyle(
+              "font-kalameh",
+              "font-faceMedium"
+            )}`}
+          >
+            {t("home:admin")}
+          </h3>
           <p className="text-sm opacity-80">administrator</p>
         </div>
       </div>
@@ -45,8 +59,10 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
       <div className="m-5">
         {pages.map((page) => (
           <div key={page.category}>
-            <h3 className="text-sm opacity-80">{page.category}</h3>
-            <div className="text-sm ml-2">
+            <h3 className="text-sm opacity-80">
+              {t(`sidebar:${page.category}`)}
+            </h3>
+            <div className={`text-sm ${changeStyle("mr-2", "ml-2")}`}>
               {page.items.map((item) => (
                 <div
                   onClick={() => pageHandler(item.name)}
@@ -56,7 +72,14 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
                   }`}
                 >
                   <i>{item.icon}</i>
-                  <p className="ml-3 text-[16px] mt-1">{item.name}</p>
+                  <p
+                    className={`text-[16px] mt-1 ${changeStyle(
+                      "mr-3",
+                      "ml-3"
+                    )}`}
+                  >
+                    {t(`sidebar:${item.name}`)}
+                  </p>
                 </div>
               ))}
             </div>

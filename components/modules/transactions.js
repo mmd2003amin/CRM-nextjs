@@ -1,24 +1,38 @@
 import fakeData from "@/constant/fakeData";
+import changeStyle from "@/helper/changeStyle";
+import { useTranslation } from "next-i18next";
 import React from "react";
 
 const Transactions = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="font-regular w-full mr-2 rounded-lg bg-template my-6 p-5">
-      <h1 className="text-[19px] opacity-80 mb-5">Latest TransActions</h1>
+    <div
+      className={`w-full rounded-lg bg-template my-6 p-5 ${changeStyle(
+        "ml-2",
+        "mr-2"
+      )}`}
+    >
+      <h1 className="text-[19px] opacity-80 mb-5">
+        {t("home:latest-transActions")}
+      </h1>
       <table className="w-full justify-between mx-auto list-transactions">
         <thead>
           <tr>
-            <td>Name</td>
-            <td>Status</td>
-            <td>Date</td>
-            <td>Amount</td>
+            <td>{t("home:name")}</td>
+            <td>{t("home:status")}</td>
+            <td>{t("home:date")}</td>
+            <td>{t("home:amount")}</td>
           </tr>
 
           {fakeData.map((item) => (
             <tr key={item.id}>
               <td className="centering justify-start">
                 <img
-                  className="size-10 rounded-full mr-3"
+                  className={`size-10 rounded-full ${changeStyle(
+                    "ml-3",
+                    "mr-3"
+                  )}`}
                   src="/user.avif"
                   alt="user"
                 />
@@ -34,14 +48,14 @@ const Transactions = () => {
                       : "bg-red-500"
                   } p-2 rounded-md`}
                 >
-                  {item.status}
+                  {t(`home:${item.status}`)}
                 </span>
               </td>
               <td>{item.date}</td>
               <td>{item.amount}</td>
             </tr>
           ))}
-          </thead>
+        </thead>
       </table>
     </div>
   );

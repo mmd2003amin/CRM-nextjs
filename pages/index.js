@@ -2,10 +2,10 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
 const index = () => {
-  const routes = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
-    routes.push("/dashboard");
+    router.push("/dashboard");
   }, []);
   return <></>;
 };
